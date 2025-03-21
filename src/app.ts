@@ -1,9 +1,3 @@
-const pizza: { name: string; price: number; getName(): string } = {
-  name: 'Pepperoni',
-  price: 20,
-  getName() {
-    return pizza.name;
-  },
-};
+let sizes: string[];
 
-console.log(pizza.getName());
+sizes = ['small', 'medium', 'large'];
