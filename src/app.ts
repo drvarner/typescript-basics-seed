@@ -1,12 +1,16 @@
-type Size = 'small' | 'medium' | 'large';
-type Callback = (size: Size) => void;
-
-let pizzaSize: Size = 'small';
-
-const selectSize: Callback = (x) => {
-  pizzaSize = x;
+type Pizza = {
+  name: string;
+  toppings: number;
 };
 
-selectSize('large');
+const pizza: Pizza = { name: 'Blazing Inferno', toppings: 5 };
 
-console.log(pizzaSize);
+const serialized = JSON.stringify(pizza);
+
+console.log(serialized);
+
+function getNameFromJSON(obj: string): string {
+  return (JSON.parse(obj) as Pizza).name;
+}
+
+console.log(getNameFromJSON(serialized));
