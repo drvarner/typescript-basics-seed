@@ -1,23 +1,21 @@
 interface Pizza {
   name: string;
   sizes: string[];
+  getAvailableSizes(): string[];
 }
 
-interface Pizzas {
-  data: Pizza[];
-}
-
-let pizzas: Pizzas;
+let pizza: Pizza;
 
 function createPizza(name: string, sizes: string[]): Pizza {
   return {
     name,
     sizes,
+    getAvailableSizes() {
+      return this.sizes;
+    },
   };
 }
 
-pizzas = {
-  data: [createPizza('Pepperoni', ['small', 'medium'])],
-};
+pizza = createPizza('Pepperoni', ['small', 'medium']);
 
-console.log(pizzas.data);
+console.log(pizza.getAvailableSizes());
