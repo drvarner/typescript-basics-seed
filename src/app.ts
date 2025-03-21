@@ -1,3 +1,3 @@
-let sizes: string[];
+let pizza: [string, number, boolean];
 
-sizes = ['small', 'medium', 'large'];
+pizza = ['Pepperoni', 20, true];
